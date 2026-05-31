@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Agricultura vertical em ambiente controlado">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#061319"/>
+      <stop offset=".58" stop-color="#020506"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="34%" r="62%">
+      <stop offset="0" stop-color="#00e5ff" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <circle cx="1140" cy="300" r="280" fill="#00e5ff" opacity=".08" filter="url(#blur)"/>
+  <g opacity=".86">
+    <rect x="335" y="260" width="930" height="520" rx="18" fill="#071014" stroke="#0f6f7a" stroke-width="3"/>
+    <rect x="392" y="320" width="820" height="78" rx="8" fill="#071e22" stroke="#00e5ff" stroke-opacity=".34"/>
+    <rect x="392" y="448" width="820" height="78" rx="8" fill="#071e22" stroke="#00e5ff" stroke-opacity=".34"/>
+    <rect x="392" y="576" width="820" height="78" rx="8" fill="#071e22" stroke="#00e5ff" stroke-opacity=".34"/>
+  </g>
+  <g stroke="#00e5ff" stroke-width="5" opacity=".42">
+    <path d="M455 360 H1150"/>
+    <path d="M455 488 H1150"/>
+    <path d="M455 616 H1150"/>
+    <path d="M455 300 V730 M802 300 V730 M1150 300 V730"/>
+  </g>
+  <g fill="#7fffd4" opacity=".78">
+    <ellipse cx="510" cy="365" rx="38" ry="15"/>
+    <ellipse cx="635" cy="365" rx="38" ry="15"/>
+    <ellipse cx="760" cy="365" rx="38" ry="15"/>
+    <ellipse cx="885" cy="365" rx="38" ry="15"/>
+    <ellipse cx="1010" cy="365" rx="38" ry="15"/>
+    <ellipse cx="1135" cy="365" rx="38" ry="15"/>
+    <ellipse cx="510" cy="493" rx="38" ry="15"/>
+    <ellipse cx="635" cy="493" rx="38" ry="15"/>
+    <ellipse cx="760" cy="493" rx="38" ry="15"/>
+    <ellipse cx="885" cy="493" rx="38" ry="15"/>
+    <ellipse cx="1010" cy="493" rx="38" ry="15"/>
+    <ellipse cx="1135" cy="493" rx="38" ry="15"/>
+    <ellipse cx="510" cy="621" rx="38" ry="15"/>
+    <ellipse cx="635" cy="621" rx="38" ry="15"/>
+    <ellipse cx="760" cy="621" rx="38" ry="15"/>
+    <ellipse cx="885" cy="621" rx="38" ry="15"/>
+    <ellipse cx="1010" cy="621" rx="38" ry="15"/>
+    <ellipse cx="1135" cy="621" rx="38" ry="15"/>
+  </g>
+  <g stroke="#b7fbff" opacity=".25">
+    <path d="M410 278 C530 230 705 220 850 250 C1020 285 1145 250 1232 214"/>
+    <path d="M360 810 C560 742 760 742 960 790 C1115 828 1250 795 1360 748"/>
+  </g>
+  <rect width="1600" height="900" fill="#000" opacity=".2"/>
+</svg>

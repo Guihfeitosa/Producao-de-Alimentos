@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Sistema agroflorestal em camadas">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07110a"/>
+      <stop offset=".56" stop-color="#030503"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="68%" cy="30%" r="60%">
+      <stop offset="0" stop-color="#22c55e" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <circle cx="1120" cy="300" r="280" fill="#22c55e" opacity=".08" filter="url(#blur)"/>
+  <path d="M0 690 C320 630 590 625 920 570 C1220 520 1410 470 1600 418 L1600 900 L0 900Z" fill="#0e2212"/>
+  <path d="M0 780 C420 690 760 676 1120 615 C1360 575 1490 535 1600 498 L1600 900 L0 900Z" fill="#11170a"/>
+  <g opacity=".82">
+    <g fill="#2f6f35">
+      <circle cx="130" cy="612" r="82"/><circle cx="275" cy="575" r="96"/><circle cx="430" cy="620" r="75"/>
+      <circle cx="1015" cy="555" r="106"/><circle cx="1180" cy="610" r="82"/><circle cx="1360" cy="560" r="116"/>
+    </g>
+    <g fill="#22c55e" opacity=".42">
+      <circle cx="186" cy="575" r="54"/><circle cx="350" cy="535" r="62"/><circle cx="1120" cy="520" r="66"/><circle cx="1440" cy="512" r="68"/>
+    </g>
+    <g fill="#5b3f22">
+      <rect x="122" y="625" width="18" height="170"/><rect x="268" y="606" width="20" height="185"/><rect x="1010" y="590" width="20" height="185"/><rect x="1350" y="592" width="22" height="190"/>
+    </g>
+  </g>
+  <g stroke-linecap="round" opacity=".64">
+    <path d="M120 792 C520 735 900 700 1500 640" stroke="#7fa542" stroke-width="10"/>
+    <path d="M140 834 C520 790 940 752 1475 710" stroke="#4a6d32" stroke-width="13"/>
+    <path d="M110 870 C500 826 880 804 1425 760" stroke="#8a642f" stroke-width="7" opacity=".48"/>
+  </g>
+  <g fill="#9be36b" opacity=".72">
+    <ellipse cx="620" cy="720" rx="28" ry="12" transform="rotate(-18 620 720)"/>
+    <ellipse cx="700" cy="705" rx="24" ry="11" transform="rotate(20 700 705)"/>
+    <ellipse cx="790" cy="690" rx="28" ry="12" transform="rotate(-10 790 690)"/>
+    <ellipse cx="875" cy="678" rx="26" ry="11" transform="rotate(17 875 678)"/>
+  </g>
+  <rect width="1600" height="900" fill="#000" opacity=".16"/>
+</svg>

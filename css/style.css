@@ -84,6 +84,74 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .fullscreen-menu__link:hover { color: white; }
 
 /* ============================================================
+   SEARCH
+   ============================================================ */
+.search-overlay {
+  position: fixed; inset: 0; z-index: 9998;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: clamp(88px, 12vh, 132px) clamp(18px, 4vw, 56px) 32px;
+  background: rgba(0, 0, 0, 0.76); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.search-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
+.search-panel {
+  position: relative; width: min(760px, 100%);
+  padding: clamp(24px, 4vw, 40px);
+  background: rgba(8, 8, 8, 0.92);
+  border: 1px solid var(--border-subtle); border-radius: 6px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+.search-panel__close {
+  position: absolute; top: 18px; right: 18px;
+  width: 38px; height: 38px; display: grid; place-items: center;
+  color: rgba(255,255,255,0.75); transition: color 0.2s, transform 0.2s;
+}
+.search-panel__close:hover { color: var(--accent); transform: rotate(90deg); }
+.search-panel__eyebrow {
+  display: block; margin-bottom: 18px; padding-right: 44px;
+  font-family: var(--font-display); font-size: 12px; letter-spacing: 0.35em;
+  color: var(--accent);
+}
+.search-panel__field {
+  display: flex; align-items: center; gap: 14px;
+  min-height: 58px; padding: 0 18px;
+  border: 1px solid rgba(255,255,255,0.18); border-radius: 4px;
+  background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.78);
+}
+.search-panel__field:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+.search-panel__field input {
+  flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: white;
+  font: 400 16px/1.4 var(--font-body);
+}
+.search-panel__field input::placeholder { color: rgba(255,255,255,0.42); }
+.search-panel__results { display: grid; gap: 10px; margin-top: 18px; }
+.search-panel__results {
+  max-height: min(430px, calc(100vh - 250px));
+  overflow-y: auto;
+  padding-right: 6px;
+  overscroll-behavior: contain;
+}
+.search-panel__results::-webkit-scrollbar { width: 4px; }
+.search-panel__results::-webkit-scrollbar-track { background: rgba(255,255,255,0.06); }
+.search-panel__results::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+.search-result {
+  width: 100%; text-align: left; padding: 16px 18px;
+  border: 1px solid rgba(255,255,255,0.10); border-radius: 4px;
+  background: rgba(255,255,255,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.search-result:hover, .search-result:focus-visible {
+  background: rgba(255,255,255,0.08); border-color: var(--accent); transform: translateY(-1px); outline: 0;
+}
+.search-result__title {
+  display: block; font-family: var(--font-display); font-size: 18px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: white; margin-bottom: 5px;
+}
+.search-result__desc { display: block; font-size: 13px; line-height: 1.5; color: var(--text-secondary); }
+.search-result--empty { cursor: default; }
+.search-result--empty:hover { transform: none; border-color: rgba(255,255,255,0.10); background: rgba(255,255,255,0.04); }
+
+/* ============================================================
    4. HEADER & HERO
    ============================================================ */
 .header {
@@ -107,7 +175,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .header__icon-btn:hover { opacity: 1; }
 .header__lang-btn { font-family: var(--font-display); font-size: 13px; letter-spacing: 0.2em; color: white; }
 
-.hero { position: relative; width: 100%; height: 100vh; overflow: hidden; z-index: 2; }
+.hero { position: relative; width: 100%; min-height: 100vh; min-height: 100svh; overflow: hidden; z-index: 2; }
 .hero__bg-layer { position: absolute; inset: 0; z-index: 1; }
 .hero__bg-image { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .hero__bg-overlay {
@@ -177,6 +245,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: linear-gradient(180deg, #000000 0%, #0A0A0A 100%);
   border-top: 1px solid var(--border-subtle);
 }
+.science-section--compact { padding-top: 0; }
 
 .science-header {
   text-align: center; margin-bottom: 80px; max-width: 900px; margin-left: auto; margin-right: auto;
@@ -194,12 +263,31 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 300;
 }
 
+.insights-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px; margin-top: 34px; text-align: left;
+}
+.insight-card {
+  min-height: 128px; padding: 20px;
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+}
+.insight-card__label {
+  display: block; margin-bottom: 10px;
+  font-family: var(--font-display); font-size: 11px; letter-spacing: 0.22em;
+  color: var(--accent); text-transform: uppercase;
+}
+.insight-card__text {
+  display: block; font-size: 14px; line-height: 1.55; color: var(--text-secondary);
+}
+
 .science-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   grid-template-rows: auto auto;
   gap: 40px;
 }
+.science-grid--two { grid-template-columns: 1fr 1fr; }
 
 .science-block {
   background: var(--bg-card);
@@ -275,8 +363,88 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .science-sources {
-  font-size: 11px; font-style: italic; color: var(--text-muted); line-height: 1.5;
+  font-size: 11px; color: var(--text-muted); line-height: 1.5;
   padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);
+}
+.science-sources__title {
+  display: block; margin-bottom: 10px;
+  font-family: var(--font-display); font-size: 12px; font-style: normal;
+  color: var(--text-secondary); letter-spacing: 0.16em; text-transform: uppercase;
+}
+.science-sources__links { display: grid; gap: 8px; }
+.science-source-link {
+  color: var(--text-muted); text-decoration: none; transition: color 0.2s;
+}
+.science-source-link:hover { color: var(--accent); }
+
+/* ============================================================
+   DEEP DIVE & COMPARISON
+   ============================================================ */
+.deep-dive,
+.comparison {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: clamp(56px, 7vw, 96px);
+}
+.deep-dive__header {
+  display: grid; grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 72px); align-items: end; margin-bottom: 40px;
+}
+.deep-dive__header .science-header__tag,
+.comparison__header .science-header__tag {
+  display: block;
+}
+.deep-dive__intro {
+  font-size: 16px; line-height: 1.8; color: var(--text-secondary); font-weight: 300;
+}
+.deep-dive__grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.deep-card {
+  min-height: 220px; padding: clamp(24px, 3vw, 34px);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 4px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+}
+.deep-card__label {
+  display: block; margin-bottom: 18px;
+  font-family: var(--font-display); font-size: 12px; letter-spacing: 0.22em;
+  color: var(--accent); text-transform: uppercase;
+}
+.deep-card__list {
+  display: grid; gap: 12px; list-style: none;
+}
+.deep-card__list li {
+  position: relative; padding-left: 18px;
+  font-size: 14px; line-height: 1.65; color: var(--text-secondary);
+}
+.deep-card__list li::before {
+  content: ''; position: absolute; left: 0; top: 0.72em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
+.comparison__header {
+  max-width: 960px; margin-bottom: 42px;
+}
+.comparison__matrix {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.comparison-card {
+  padding: 24px; min-height: 190px;
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+}
+.comparison-card__label {
+  display: block; margin-bottom: 12px;
+  font-family: var(--font-display); font-size: 11px; letter-spacing: 0.18em;
+  color: var(--accent); text-transform: uppercase;
+}
+.comparison-card strong {
+  display: block; margin-bottom: 10px;
+  font-family: var(--font-display); font-size: 22px; line-height: 1.1;
+  color: var(--text-primary); text-transform: uppercase;
+}
+.comparison-card p {
+  font-size: 14px; line-height: 1.6; color: var(--text-secondary);
 }
 
 /* ============================================================
@@ -299,16 +467,85 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .hero__bottom-left { bottom: 160px; left: 24px; }
   .hero__bottom-right { bottom: 30px; right: 24px; gap: 24px; }
   .science-grid { grid-template-columns: 1fr; }
+  .science-grid--two { grid-template-columns: 1fr; }
+  .deep-dive__header { grid-template-columns: 1fr; align-items: start; }
+  .comparison__matrix { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mechanism-block { grid-column: 1 / 2; grid-row: auto; }
   .charts-block { grid-column: 1 / 2; grid-row: auto; }
   .glossary-block { grid-column: 1 / 2; grid-row: auto; }
+  #metodologia { grid-template-columns: 1fr !important; }
 }
 @media (max-width: 768px) {
-  .header { padding: 24px; }
+  .container { padding: 0 20px; }
+  .header { padding: 20px; grid-template-columns: 1fr auto 1fr; }
+  .header__right { gap: 16px; }
   .header__menu-text, .header__lang-btn { display: none; }
+  .fullscreen-menu__close { top: 24px; right: 24px; }
+  .fullscreen-menu__footer { display: none; }
+  .preloader__text { max-width: 260px; text-align: center; line-height: 1.8; }
+  .hero { min-height: 760px; }
+  .hero__content { padding: 20px; }
+  .hero__top-right {
+    top: 86px; left: 20px; right: 20px;
+    display: flex; justify-content: flex-start;
+  }
   .stats-box { padding: 12px 16px; gap: 16px; }
   .stats-box__val { font-size: 24px; }
+  .stats-box__label { letter-spacing: 0.14em; }
+  .hero__bottom-left {
+    left: 20px; right: 20px; bottom: 210px;
+    max-width: calc(100% - 40px);
+  }
+  .hero__supertitle { font-size: 10px; letter-spacing: 0.22em; line-height: 1.5; }
   .hero__title { font-size: clamp(48px, 12vw, 80px); }
+  .hero__bottom-right {
+    left: 20px; right: 20px; bottom: 28px;
+    align-items: stretch; gap: 22px;
+  }
+  .hero__cta {
+    width: 100%; justify-content: center;
+    padding: 15px 20px; letter-spacing: 0.14em;
+  }
+  .slide-controls {
+    width: 100%; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  }
+  .slide-controls__bars { flex: 1 1 150px; }
+  .slide-controls__bar { flex: 1; min-width: 34px; width: auto; }
+  .science-header { margin-bottom: 48px; }
+  .science-header__tag { letter-spacing: 0.24em; }
+  .insights-grid { grid-template-columns: 1fr; }
+  .science-grid { gap: 24px; }
+  .deep-dive__grid, .comparison__matrix { grid-template-columns: 1fr; }
+  .deep-card, .comparison-card { min-height: auto; }
   .footer__inner { flex-direction: column; text-align: center; }
   .science-block { padding: 24px; }
+  .science-block__title { font-size: 18px; letter-spacing: 0.1em; margin-bottom: 24px; }
+  .sci-chart__header { gap: 18px; align-items: flex-start; }
+  .sci-chart__label { line-height: 1.25; }
+}
+
+@media (max-width: 480px) {
+  :root { --section-padding: 64px; }
+  .header__logo-icon { width: 28px; height: 28px; }
+  .header__right { gap: 12px; }
+  .header__icon-btn { min-width: 34px; min-height: 34px; justify-content: center; }
+  .hero { min-height: 720px; }
+  .hero__top-right { top: 82px; }
+  .stats-box {
+    width: 100%; justify-content: space-between;
+    padding: 12px 14px; gap: 12px;
+  }
+  .stats-box__val { font-size: 21px; }
+  .stats-box__divider { height: 32px; }
+  .hero__bottom-left { bottom: 215px; }
+  .hero__title { font-size: clamp(44px, 17vw, 68px); line-height: 0.9; }
+  .hero__bottom-right { bottom: 22px; }
+  .slide-controls__counter { order: -1; width: 100%; }
+  .slide-controls__arrows { margin-left: auto; }
+  .search-overlay { padding: 76px 14px 24px; }
+  .search-panel { padding: 22px 16px; }
+  .search-panel__field { min-height: 52px; padding: 0 14px; }
+  .search-panel__results { max-height: calc(100vh - 190px); }
+  .search-result { padding: 14px; }
+  .footer__text, .footer__sources { line-height: 1.6; letter-spacing: 0.12em; }
 }

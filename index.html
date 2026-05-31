@@ -3,28 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Produção de Alimentos e Seus Impactos Ambientais — Uma análise científica aprofundada sobre pecuária intensiva, monocultura e agricultura regenerativa." />
-  <title>Produção de Alimentos — Impactos Ambientais</title>
+  <meta name="description" content="Produção de Alimentos e Seus Impactos Ambientais - análise visual sobre pecuária intensiva, monoculturas e agricultura vertical baseada em fontes científicas." />
+  <title>Produção de Alimentos - Impactos Ambientais</title>
 
-  <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
-
-
 </head>
 <body>
-
-  <!-- ==================== PRELOADER ==================== -->
   <div class="preloader" id="preloader">
     <div class="preloader__ring"></div>
     <span class="preloader__text">PRODUÇÃO DE ALIMENTOS</span>
   </div>
 
-  <!-- ==================== FULLSCREEN MENU ==================== -->
   <div class="fullscreen-menu" id="fullscreen-menu">
     <button class="fullscreen-menu__close" id="menu-close-btn" aria-label="Fechar menu">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -35,28 +27,42 @@
       <nav class="fullscreen-menu__nav">
         <a href="#hero" class="fullscreen-menu__link menu-link-jump">INÍCIO</a>
         <a href="#science-section" class="fullscreen-menu__link menu-link-jump">DADOS CIENTÍFICOS</a>
+        <a href="#comparativo" class="fullscreen-menu__link menu-link-jump">COMPARATIVO</a>
         <a href="#metodologia" class="fullscreen-menu__link menu-link-jump" id="link-methodology">METODOLOGIA</a>
         <a href="#sobre" class="fullscreen-menu__link menu-link-jump" id="link-about">SOBRE O PROJETO</a>
       </nav>
       <div class="fullscreen-menu__footer">
         <span>© 2026 PRODUÇÃO DE ALIMENTOS</span>
-        <span>LABORATÓRIO DE SUSTENTABILIDADE</span>
+        <span>FONTES: FAO, IPCC, IPBES, OWID E ARTIGOS CIENTÍFICOS</span>
       </div>
     </div>
   </div>
 
-  <!-- ==================== GLOBAL OVERLAYS ==================== -->
   <div class="noise-overlay"></div>
 
-  <!-- ==================== HEADER ==================== -->
+  <div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-panel" role="search" aria-labelledby="search-title">
+      <button class="search-panel__close" id="search-close-btn" aria-label="Fechar busca">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <span class="search-panel__eyebrow" id="search-title">BUSCA RÁPIDA</span>
+      <label class="search-panel__field" for="site-search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input id="site-search" type="search" autocomplete="off" placeholder="Buscar tema, dado ou seção" />
+      </label>
+      <div class="search-panel__results" id="search-results" aria-live="polite"></div>
+    </div>
+  </div>
+
   <header class="header" id="header">
     <div class="header__left">
       <button class="header__menu-btn" id="menu-btn" aria-label="Menu">
-        <span class="header__hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
+        <span class="header__hamburger"><span></span><span></span><span></span></span>
         <span class="header__menu-text">MENU</span>
       </button>
     </div>
@@ -71,7 +77,7 @@
     </div>
 
     <div class="header__right">
-      <button class="header__icon-btn" aria-label="Buscar">
+      <button class="header__icon-btn" id="search-btn" aria-label="Buscar">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <circle cx="11" cy="11" r="7"/>
           <path d="M21 21l-4.35-4.35"/>
@@ -83,19 +89,13 @@
     </div>
   </header>
 
-  <!-- ==================== HERO SECTION (Lamborghini Exact Replica) ==================== -->
   <section class="hero" id="hero">
-
-    <!-- Background Layer -->
     <div class="hero__bg-layer">
-      <img class="hero__bg-image" id="hero-image" src="img/pecuaria.png" alt="Background temático" />
+      <img class="hero__bg-image" id="hero-image" src="img/pecuaria.png" alt="Imagem temática sobre produção de alimentos" />
       <div class="hero__bg-overlay"></div>
     </div>
 
-    <!-- Content Layer -->
     <div class="hero__content">
-      
-      <!-- Top Right: Stats Box -->
       <div class="hero__top-right">
         <div class="stats-box" id="hero-stats-box">
           <div class="stats-box__item">
@@ -110,15 +110,12 @@
         </div>
       </div>
 
-      <!-- Bottom Left: Titles -->
       <div class="hero__bottom-left">
         <span class="hero__supertitle" id="hero-supertitle">O IMPACTO INVISÍVEL &nbsp;|&nbsp; CARNE</span>
         <h1 class="hero__title" id="hero-title">PECUÁRIA<br/>INTENSIVA</h1>
       </div>
 
-      <!-- Bottom Right: CTA + Controls -->
       <div class="hero__bottom-right">
-        
         <button class="hero__cta" id="hero-cta">
           <span id="cta-text">EXPLORAR DADOS</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -127,15 +124,12 @@
         </button>
 
         <nav class="slide-controls" id="slide-controls" aria-label="Navegação entre temas">
-          
           <div class="slide-controls__bars" id="slide-bars-container">
             <button class="slide-controls__bar slide-controls__bar--active" data-index="0" aria-label="Pecuária Intensiva"><span class="slide-controls__bar-fill"></span></button>
             <button class="slide-controls__bar" data-index="1" aria-label="Monocultura de Grãos"><span class="slide-controls__bar-fill"></span></button>
             <button class="slide-controls__bar" data-index="2" aria-label="Agricultura Vertical"><span class="slide-controls__bar-fill"></span></button>
           </div>
-
           <span class="slide-controls__counter" id="slide-counter">01 / 03</span>
-
           <div class="slide-controls__arrows">
             <button class="slide-controls__arrow" id="prev-btn" aria-label="Tema anterior">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 19l-7-7 7-7"/></svg>
@@ -144,85 +138,122 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
             </button>
           </div>
-
           <button class="slide-controls__arrow" id="play-btn" aria-label="Autoplay" style="margin-left: 4px;">
             <svg class="play-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><polygon points="5,3 19,12 5,21"/></svg>
             <svg class="pause-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>
           </button>
         </nav>
-
       </div>
     </div>
   </section>
 
-  <!-- ==================== SCIENCE SECTION (Deep Dive) ==================== -->
   <section class="science-section" id="science-section">
     <div class="container">
-      
       <div class="science-header reveal">
         <div class="science-header__tag" id="science-tag">ANÁLISE APROFUNDADA</div>
         <h2 class="science-header__title" id="science-title">O MECANISMO E IMPACTO</h2>
-        <p class="science-header__intro" id="science-intro">
-          <!-- JS fills this -->
-        </p>
+        <p class="science-header__intro" id="science-intro"></p>
+        <div class="insights-grid" id="insights-grid"></div>
       </div>
 
       <div class="science-grid">
-        
-        <!-- Bloco 1: O Mecanismo -->
         <div class="science-block mechanism-block reveal">
           <h3 class="science-block__title" id="title-block-1">O MECANISMO</h3>
-          <div class="mechanism-chain" id="mechanism-chain">
-            <!-- JS fills this with Cause -> Effect chain -->
-          </div>
+          <div class="mechanism-chain" id="mechanism-chain"></div>
         </div>
 
-        <!-- Bloco 2: Infográficos Comparativos -->
         <div class="science-block charts-block reveal">
           <h3 class="science-block__title" id="title-block-2">MÉTRICAS COMPARATIVAS (0 a 100%)</h3>
-          <div class="charts-container" id="charts-container">
-            <!-- JS fills this with progress bars -->
-          </div>
+          <div class="charts-container" id="charts-container"></div>
         </div>
 
-        <!-- Bloco 3: Glossário e Fontes -->
         <div class="science-block glossary-block reveal">
-          <h3 class="science-block__title" id="title-block-3">GLOSSÁRIO CIENTÍFICO</h3>
-          <div class="glossary-accordion" id="glossary-accordion">
-            <!-- JS fills this with terms -->
-          </div>
-          <div class="science-sources" id="science-sources">
-            <!-- JS fills this with citations -->
-          </div>
+          <h3 class="science-block__title" id="title-block-3">GLOSSÁRIO E FONTES</h3>
+          <div class="glossary-accordion" id="glossary-accordion"></div>
+          <div class="science-sources" id="science-sources"></div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ==================== METODOLOGIA & SOBRE ==================== -->
-  <section class="science-section" style="padding-top: 0;">
+  <section class="science-section science-section--compact" id="analise-completa">
     <div class="container">
-      <div class="science-grid" style="grid-template-columns: 1fr 1fr;" id="metodologia">
+      <div class="deep-dive reveal">
+        <div class="deep-dive__header">
+          <div>
+            <span class="science-header__tag" id="deep-tag">ANÁLISE COMPLETA</span>
+            <h2 class="science-header__title" id="deep-title">IMPACTOS, LIMITES E SOLUÇÕES</h2>
+          </div>
+          <p class="deep-dive__intro" id="deep-intro"></p>
+        </div>
+        <div class="deep-dive__grid" id="deep-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="science-section science-section--compact" id="comparativo">
+    <div class="container">
+      <div class="comparison reveal">
+        <div class="comparison__header">
+          <span class="science-header__tag">LEITURA COMPARATIVA</span>
+          <h2 class="science-header__title">QUAL SISTEMA É MAIS SUSTENTÁVEL?</h2>
+          <p class="science-header__intro">Não existe uma resposta única. O impacto depende do alimento produzido, clima, energia disponível, solo, água, escala, transporte, desperdício, dieta e qualidade do manejo. A melhor estratégia costuma combinar produtividade, restauração ecológica e redução de perdas.</p>
+        </div>
+        <div class="comparison__matrix">
+          <article class="comparison-card">
+            <span class="comparison-card__label">Maior pressão climática</span>
+            <strong>Pecuária intensiva</strong>
+            <p>Principalmente por metano, uso de terra e mudanças de uso do solo.</p>
+          </article>
+          <article class="comparison-card">
+            <span class="comparison-card__label">Maior pressão hídrica</span>
+            <strong>Agricultura irrigada</strong>
+            <p>Depende de captação, recarga de aquíferos, tecnologia e governança da água.</p>
+          </article>
+          <article class="comparison-card">
+            <span class="comparison-card__label">Maior risco ao solo</span>
+            <strong>Monoculturas mal manejadas</strong>
+            <p>Solo exposto, baixa diversidade e uso intensivo de insumos ampliam erosão e degradação.</p>
+          </article>
+          <article class="comparison-card">
+            <span class="comparison-card__label">Maior potencial restaurador</span>
+            <strong>Agroflorestas e regenerativa</strong>
+            <p>Quando bem manejadas, recuperam carbono, água, biodiversidade e fertilidade.</p>
+          </article>
+          <article class="comparison-card">
+            <span class="comparison-card__label">Menor uso de terra</span>
+            <strong>Agricultura vertical</strong>
+            <p>Boa para folhas e ervas, mas sensível ao consumo de energia elétrica.</p>
+          </article>
+          <article class="comparison-card">
+            <span class="comparison-card__label">Proteína aquática</span>
+            <strong>Pesca e aquicultura</strong>
+            <p>Pode ser eficiente, mas exige manejo para evitar sobrepesca, efluentes e perda de habitat.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="science-section science-section--compact">
+    <div class="container">
+      <div class="science-grid science-grid--two" id="metodologia">
         <div class="science-block reveal">
           <h3 class="science-block__title" id="title-methodology">METODOLOGIA</h3>
-          <p class="mech-item__desc" id="text-methodology">Este projeto compila dados científicos brutos de instituições globais (FAO, IPCC, MIT), convertendo-os em métricas comparativas. As porcentagens e escalas de 0 a 100% representam índices relativos de impacto dentro do ecossistema agrícola global, simplificados para fins de estudo.</p>
+          <p class="mech-item__desc" id="text-methodology">Os números foram selecionados em fontes públicas e científicas, priorizando FAO, IPCC, IPBES, Our World in Data e revisões acadêmicas. As escalas de 0 a 100% são índices comparativos para leitura visual: não substituem inventários locais, mas ajudam a comparar pressão ambiental entre sistemas.</p>
         </div>
         <div class="science-block reveal" id="sobre">
           <h3 class="science-block__title" id="title-about">SOBRE O PROJETO</h3>
-          <p class="mech-item__desc" id="text-about"><strong>Produção de Alimentos</strong> é uma iniciativa educacional open-source desenvolvida para unir pesquisa acadêmica rigorosa a uma experiência de interface luxuosa e imersiva. O objetivo é engajar estudantes através do design de alto nível.</p>
+          <p class="mech-item__desc" id="text-about"><strong>Produção de Alimentos</strong> apresenta os impactos de diferentes modelos produtivos com linguagem visual imersiva. A proposta é mostrar que sustentabilidade depende de emissões, água, solo, biodiversidade, energia, transporte, desperdício e escolhas de consumo.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container footer__inner">
-      <span class="footer__text">© 2026 PRODUÇÃO DE ALIMENTOS — PROJETO EDUCACIONAL</span>
-      <span class="footer__sources">
-        DESIGN DE INTERFACE AVANÇADA
-      </span>
+      <span class="footer__text">© 2026 PRODUÇÃO DE ALIMENTOS - PROJETO EDUCACIONAL</span>
+      <span class="footer__sources">FONTES CONFIÁVEIS E DADOS COMPARATIVOS</span>
     </div>
   </footer>
 

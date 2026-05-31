@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Monocultura em massa com linhas de cultivo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#141006"/>
+      <stop offset=".58" stop-color="#050402"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="68%" cy="33%" r="62%">
+      <stop offset="0" stop-color="#d4af37" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <path d="M0 560 C380 505 720 515 1110 465 C1360 432 1490 400 1600 365 L1600 900 L0 900Z" fill="#231c0b" opacity=".86"/>
+  <path d="M0 705 C350 640 705 620 1095 570 C1335 538 1490 505 1600 470 L1600 900 L0 900Z" fill="#120f08" opacity=".9"/>
+  <g stroke-linecap="round">
+    <path d="M70 825 C470 735 930 650 1540 560" stroke="#d4af37" stroke-width="6" opacity=".46"/>
+    <path d="M80 865 C500 792 960 725 1530 650" stroke="#6b5820" stroke-width="14" opacity=".7"/>
+    <path d="M90 780 C455 700 900 620 1545 520" stroke="#3e351a" stroke-width="14" opacity=".78"/>
+    <path d="M120 735 C520 650 930 575 1520 490" stroke="#987b2d" stroke-width="8" opacity=".38"/>
+    <path d="M160 690 C560 610 970 535 1490 462" stroke="#4d441e" stroke-width="12" opacity=".62"/>
+  </g>
+  <g fill="#d4af37" opacity=".64">
+    <path d="M250 690 C230 635 260 596 300 578 C330 620 318 668 250 690Z"/>
+    <path d="M365 668 C344 610 380 570 420 552 C448 610 430 650 365 668Z"/>
+    <path d="M485 645 C465 592 498 552 540 532 C566 592 546 630 485 645Z"/>
+    <path d="M620 622 C598 565 635 528 675 505 C700 560 686 604 620 622Z"/>
+    <path d="M760 598 C740 542 778 506 820 488 C842 546 824 584 760 598Z"/>
+  </g>
+  <g stroke="#f3d36a" stroke-width="4" opacity=".24">
+    <path d="M1065 430 C1125 490 1180 535 1260 565"/>
+    <path d="M1118 395 C1175 465 1232 508 1315 535"/>
+    <path d="M1185 370 C1240 440 1295 480 1380 505"/>
+  </g>
+  <circle cx="1180" cy="310" r="250" fill="#d4af37" opacity=".07"/>
+  <rect width="1600" height="900" fill="#000" opacity=".18"/>
+</svg>

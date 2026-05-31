@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Pecuaria intensiva com pastagens e emissao atmosferica">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#170606"/>
+      <stop offset=".58" stop-color="#050202"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="33%" r="62%">
+      <stop offset="0" stop-color="#ff3333" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <circle cx="1150" cy="300" r="275" fill="#ff3333" opacity=".08" filter="url(#blur)"/>
+  <path d="M0 648 C360 590 650 600 1010 540 C1270 496 1450 455 1600 410 L1600 900 L0 900Z" fill="#20120d" opacity=".92"/>
+  <path d="M0 760 C360 690 750 660 1130 604 C1360 570 1490 530 1600 492 L1600 900 L0 900Z" fill="#100b08" opacity=".88"/>
+  <g stroke-linecap="round" opacity=".52">
+    <path d="M100 780 C420 720 780 670 1510 586" stroke="#6b3e1f" stroke-width="12"/>
+    <path d="M90 835 C440 770 805 735 1515 670" stroke="#33411f" stroke-width="14"/>
+    <path d="M120 872 C530 820 900 795 1480 748" stroke="#24160e" stroke-width="10"/>
+  </g>
+  <g fill="#1d1511" stroke="#a34a36" stroke-width="5" opacity=".88">
+    <path d="M505 615 C555 565 670 565 725 620 C772 622 812 650 812 690 C812 730 776 756 720 750 L574 746 C512 750 465 724 462 685 C460 655 480 632 505 615Z"/>
+    <path d="M570 590 C548 545 568 512 610 500 C650 488 682 512 688 552 C660 535 620 536 596 558Z"/>
+    <path d="M693 552 C724 520 758 526 780 558 C750 554 724 562 706 585Z"/>
+  </g>
+  <g stroke="#2b1a12" stroke-width="13" stroke-linecap="round" opacity=".95">
+    <path d="M560 742 L548 820"/>
+    <path d="M638 744 L628 828"/>
+    <path d="M710 742 L724 818"/>
+    <path d="M770 728 L790 800"/>
+  </g>
+  <g fill="none" stroke="#ff7a66" stroke-width="6" opacity=".28">
+    <path d="M970 610 C910 540 940 490 1030 472 C1120 454 1155 398 1100 338"/>
+    <path d="M1050 628 C998 565 1025 515 1102 492 C1194 464 1250 405 1218 350"/>
+    <path d="M1160 640 C1110 570 1150 522 1230 498 C1310 472 1365 416 1330 360"/>
+  </g>
+  <g fill="#ff3333" opacity=".2">
+    <circle cx="1030" cy="472" r="18"/>
+    <circle cx="1102" cy="492" r="16"/>
+    <circle cx="1230" cy="498" r="18"/>
+  </g>
+  <rect width="1600" height="900" fill="#000" opacity=".2"/>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Agricultura irrigada com pivo central">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#07111a"/>
+      <stop offset=".55" stop-color="#030608"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <radialGradient id="water" cx="69%" cy="34%" r="58%">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#water)"/>
+  <g opacity=".74">
+    <path d="M0 610 L1600 462 L1600 900 L0 900Z" fill="#17210f"/>
+    <path d="M0 700 L1600 545 L1600 625 L0 778Z" fill="#454a22"/>
+    <path d="M0 790 L1600 640 L1600 720 L0 865Z" fill="#1f4b2d"/>
+  </g>
+  <g stroke="#38bdf8" fill="none" stroke-linecap="round">
+    <path d="M797 496 C618 522 455 582 320 675" stroke-width="4" opacity=".26"/>
+    <path d="M797 496 C570 532 370 612 205 748" stroke-width="4" opacity=".22"/>
+    <path d="M797 496 C1012 494 1248 540 1475 640" stroke-width="4" opacity=".24"/>
+    <path d="M797 496 C1030 530 1260 610 1510 760" stroke-width="4" opacity=".2"/>
+    <path d="M797 496 L1395 604" stroke-width="8" opacity=".82"/>
+    <path d="M797 496 L1320 690" stroke-width="3" opacity=".44"/>
+  </g>
+  <circle cx="797" cy="496" r="28" fill="#dff8ff" opacity=".82"/>
+  <circle cx="797" cy="496" r="68" fill="#38bdf8" opacity=".11"/>
+  <g stroke="#7dd3fc" opacity=".28" stroke-linecap="round">
+    <path d="M164 782 C400 730 740 682 1160 628"/>
+    <path d="M120 842 C460 782 830 738 1370 680"/>
+    <path d="M90 650 C460 600 840 552 1510 498"/>
+  </g>
+  <rect width="1600" height="900" fill="#000" opacity=".2"/>
+</svg>

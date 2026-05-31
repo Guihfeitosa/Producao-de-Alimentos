@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Pesca e aquicultura em ambiente aquatico">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#06111d"/>
+      <stop offset=".5" stop-color="#02060a"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="34%" r="60%">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <path d="M0 522 C300 475 560 535 850 506 C1135 476 1335 430 1600 480 L1600 900 L0 900Z" fill="#0a2134" opacity=".82"/>
+  <path d="M0 655 C360 605 650 662 980 628 C1245 600 1410 552 1600 584 L1600 900 L0 900Z" fill="#061827" opacity=".78"/>
+  <g stroke="#60a5fa" fill="none" stroke-linecap="round" opacity=".75">
+    <ellipse cx="515" cy="560" rx="165" ry="60" stroke-width="5"/>
+    <ellipse cx="515" cy="560" rx="108" ry="38" stroke-width="3" opacity=".7"/>
+    <ellipse cx="825" cy="520" rx="185" ry="66" stroke-width="5"/>
+    <ellipse cx="825" cy="520" rx="118" ry="42" stroke-width="3" opacity=".7"/>
+    <ellipse cx="1130" cy="590" rx="160" ry="56" stroke-width="5"/>
+    <ellipse cx="1130" cy="590" rx="104" ry="36" stroke-width="3" opacity=".7"/>
+    <path d="M350 560 H680 M515 500 V620 M640 520 L975 500 M975 535 L1290 590"/>
+  </g>
+  <g stroke="#93c5fd" opacity=".24">
+    <path d="M130 690 C340 650 560 650 780 690 S1220 730 1480 665"/>
+    <path d="M90 765 C360 720 640 720 900 760 S1260 815 1520 745"/>
+    <path d="M120 830 C360 802 600 796 840 830 S1250 870 1500 815"/>
+  </g>
+  <g stroke="#5eead4" stroke-linecap="round" opacity=".46">
+    <path d="M260 780 C315 725 335 700 350 655"/>
+    <path d="M316 800 C365 752 405 725 455 700"/>
+    <path d="M1320 780 C1275 730 1250 700 1232 650"/>
+    <path d="M1375 812 C1335 760 1300 730 1260 702"/>
+  </g>
+  <circle cx="1180" cy="320" r="255" fill="#60a5fa" opacity=".08"/>
+  <rect width="1600" height="900" fill="#000" opacity=".18"/>
+</svg>
