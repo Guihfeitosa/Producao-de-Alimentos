@@ -172,6 +172,13 @@ const STATIC_SEARCH_ITEMS = [
   },
   {
     type: 'section',
+    target: '#ods-12',
+    title: { pt: 'ODS 12', en: 'SDG 12' },
+    desc: { pt: 'Consumo e producao responsaveis na alimentacao.', en: 'Responsible consumption and production in food systems.' },
+    keywords: 'ods 12 agenda 2030 consumo producao responsaveis desperdicio residuos compostagem reciclagem rotulagem'
+  },
+  {
+    type: 'section',
     target: '#metodologia',
     title: { pt: 'Metodologia', en: 'Methodology' },
     desc: { pt: 'Como os dados foram reunidos e comparados.', en: 'How the data was gathered and compared.' },
@@ -696,7 +703,7 @@ const DEEP_DIVE_DATA = {
 let currentIndex = 0;
 let isTransitioning = false;
 let autoplayTimer = null;
-let isAutoplay = true; 
+let isAutoplay = false; 
 let currentLang = 'pt'; 
 const AUTOPLAY_INTERVAL = 7000; 
 
@@ -754,6 +761,9 @@ document.addEventListener('DOMContentLoaded', () => {
   dom.tBlock1 = document.getElementById('title-block-1');
   dom.tBlock2 = document.getElementById('title-block-2');
   dom.tBlock3 = document.getElementById('title-block-3');
+  dom.ods12Tag = document.getElementById('ods12-tag');
+  dom.ods12Title = document.getElementById('ods12-title');
+  dom.ods12Intro = document.getElementById('ods12-intro');
 
   // Setup Transition Classes
   [dom.heroSupertitle, dom.heroTitle, dom.heroStatsBox, dom.sciIntro].forEach(el => {
@@ -763,7 +773,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   bindEvents();
   applyTheme(0, false);
-  startAutoplay();
 
   setTimeout(() => {
     if(dom.preloader) dom.preloader.classList.add('preloader--hidden');
@@ -832,13 +841,20 @@ function bindEvents() {
       
       const linkMethodology = document.getElementById('link-methodology');
       const linkAbout = document.getElementById('link-about');
+      const linkOds12 = document.getElementById('link-ods12');
       const titleMethodology = document.getElementById('title-methodology');
       const textMethodology = document.getElementById('text-methodology');
       const titleAbout = document.getElementById('title-about');
       const textAbout = document.getElementById('text-about');
 
+      if (linkOds12) linkOds12.textContent = currentLang === 'pt' ? 'ODS 12' : 'SDG 12';
       if (linkMethodology) linkMethodology.textContent = currentLang === 'pt' ? 'METODOLOGIA' : 'METHODOLOGY';
       if (linkAbout) linkAbout.textContent = currentLang === 'pt' ? 'SOBRE O PROJETO' : 'ABOUT THE PROJECT';
+      if (dom.ods12Tag) dom.ods12Tag.textContent = currentLang === 'pt' ? 'AGENDA 2030' : '2030 AGENDA';
+      if (dom.ods12Title) dom.ods12Title.textContent = currentLang === 'pt' ? 'ODS 12: CONSUMO E PRODUÇÃO RESPONSÁVEIS' : 'SDG 12: RESPONSIBLE CONSUMPTION AND PRODUCTION';
+      if (dom.ods12Intro) dom.ods12Intro.textContent = currentLang === 'pt'
+        ? 'A ODS 12 propõe produzir e consumir com menos desperdício, menos poluição e melhor uso dos recursos naturais. Na alimentação, isso aparece em escolhas como reduzir perdas na cadeia produtiva, planejar compras, valorizar produtores responsáveis, melhorar embalagens, reaproveitar resíduos orgânicos e pressionar por sistemas com menor impacto ambiental.'
+        : 'SDG 12 proposes producing and consuming with less waste, less pollution, and better use of natural resources. In food systems, this means reducing losses across supply chains, planning purchases, valuing responsible producers, improving packaging, reusing organic waste, and pushing for lower-impact systems.';
       if (titleMethodology) titleMethodology.textContent = currentLang === 'pt' ? 'METODOLOGIA' : 'METHODOLOGY';
       if (titleAbout) titleAbout.textContent = currentLang === 'pt' ? 'SOBRE O PROJETO' : 'ABOUT THE PROJECT';
       if (textMethodology) textMethodology.innerHTML = currentLang === 'pt' 
@@ -911,19 +927,24 @@ function openSearch() {
   if (!dom.searchOverlay) return;
   dom.searchOverlay.classList.add('is-open');
   dom.searchOverlay.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('search-open');
   renderSearchResults(dom.searchInput ? dom.searchInput.value : '');
-  setTimeout(() => {
-    if (dom.searchInput) {
+  const shouldAutofocus = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (shouldAutofocus) {
+    setTimeout(() => {
+      if (!dom.searchOverlay.classList.contains('is-open') || !dom.searchInput) return;
       dom.searchInput.focus();
       dom.searchInput.select();
-    }
-  }, 50);
+    }, 50);
+  }
 }
 
 function closeSearch() {
   if (!dom.searchOverlay) return;
   dom.searchOverlay.classList.remove('is-open');
   dom.searchOverlay.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('search-open');
+  if (dom.searchInput) dom.searchInput.blur();
 }
 
 function renderSearchResults(query = '') {

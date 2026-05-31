@@ -1,0 +1,17 @@
+<svg width="460" height="460" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="460" height="460" fill="#C6922E"/>
+
+  <text x="27" y="124" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="106" font-weight="900" letter-spacing="-8">12</text>
+  <text x="168" y="71" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="900" textLength="236" lengthAdjust="spacingAndGlyphs">CONSUMO E</text>
+  <text x="168" y="119" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="900" textLength="216" lengthAdjust="spacingAndGlyphs">PRODUÇÃO</text>
+  <text x="168" y="167" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="900" textLength="260" lengthAdjust="spacingAndGlyphs">RESPONSÁVEIS</text>
+
+  <path
+    d="M149.5 238C102.5 238 81 276.5 81 319.5C81 362.5 109.5 385 148 385C184.5 385 209 361.5 227.5 329.5L244 300C265.5 262 291 238 329.5 238C368 238 379 270.5 379 305.5C379 346.5 356.5 385 312 385C271.5 385 244 359 224.5 326L210.5 302C192 270.5 176 238 149.5 238Z"
+    stroke="#FFFFFF"
+    stroke-width="24"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path d="M175 333L215 319L207 360L175 333Z" fill="#FFFFFF"/>
+</svg>

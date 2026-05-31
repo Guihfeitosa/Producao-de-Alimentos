@@ -89,18 +89,25 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .search-overlay {
   position: fixed; inset: 0; z-index: 9998;
   display: flex; align-items: flex-start; justify-content: center;
+  width: 100%; height: 100vh; height: 100dvh;
   padding: clamp(88px, 12vh, 132px) clamp(18px, 4vw, 56px) 32px;
   background: rgba(0, 0, 0, 0.76); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   opacity: 0; visibility: hidden; pointer-events: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+body.search-open { overflow: hidden; }
 .search-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
 .search-panel {
   position: relative; width: min(760px, 100%);
+  max-height: calc(100dvh - 120px);
   padding: clamp(24px, 4vw, 40px);
   background: rgba(8, 8, 8, 0.92);
   border: 1px solid var(--border-subtle); border-radius: 6px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
 }
 .search-panel__close {
   position: absolute; top: 18px; right: 18px;
@@ -119,6 +126,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border: 1px solid rgba(255,255,255,0.18); border-radius: 4px;
   background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.78);
 }
+.search-panel__field svg { flex: 0 0 auto; }
 .search-panel__field:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
 .search-panel__field input {
   flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: white;
@@ -234,6 +242,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); transition: all 0.3s;
 }
 .slide-controls__arrow:hover { border-color: var(--accent); color: var(--accent); }
+.play-icon { display: block; }
+.pause-icon { display: none; }
 .is-playing .play-icon { display: none; }
 .is-playing .pause-icon { display: block; }
 
@@ -448,6 +458,69 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ============================================================
+   ODS 12
+   ============================================================ */
+.ods12 {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: clamp(56px, 7vw, 96px);
+}
+.ods12__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  max-width: 1180px;
+  margin-bottom: 42px;
+}
+.ods12__header .science-header__tag {
+  display: block;
+}
+.ods12__image {
+  width: min(260px, 100%);
+  justify-self: end;
+  border-radius: 4px;
+  box-shadow: 0 24px 70px rgba(190, 139, 41, 0.18);
+}
+.ods12__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.ods12-card {
+  min-height: 230px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+}
+.ods12-card__number {
+  display: inline-grid;
+  place-items: center;
+  min-width: 46px;
+  height: 32px;
+  margin-bottom: 18px;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--accent);
+}
+.ods12-card strong {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.1;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+.ods12-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
    6. FOOTER
    ============================================================ */
 .footer { padding: 32px 0 40px; border-top: 1px solid var(--border-subtle); }
@@ -469,7 +542,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .science-grid { grid-template-columns: 1fr; }
   .science-grid--two { grid-template-columns: 1fr; }
   .deep-dive__header { grid-template-columns: 1fr; align-items: start; }
+  .ods12__header { grid-template-columns: 1fr; align-items: start; }
+  .ods12__image { justify-self: start; max-width: 220px; }
   .comparison__matrix { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ods12__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mechanism-block { grid-column: 1 / 2; grid-row: auto; }
   .charts-block { grid-column: 1 / 2; grid-row: auto; }
   .glossary-block { grid-column: 1 / 2; grid-row: auto; }
@@ -515,8 +591,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .science-header__tag { letter-spacing: 0.24em; }
   .insights-grid { grid-template-columns: 1fr; }
   .science-grid { gap: 24px; }
-  .deep-dive__grid, .comparison__matrix { grid-template-columns: 1fr; }
+  .deep-dive__grid, .comparison__matrix, .ods12__grid { grid-template-columns: 1fr; }
+  .ods12__image { max-width: 240px; }
   .deep-card, .comparison-card { min-height: auto; }
+  .ods12-card { min-height: auto; }
   .footer__inner { flex-direction: column; text-align: center; }
   .science-block { padding: 24px; }
   .science-block__title { font-size: 18px; letter-spacing: 0.1em; margin-bottom: 24px; }
@@ -543,9 +621,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .slide-controls__counter { order: -1; width: 100%; }
   .slide-controls__arrows { margin-left: auto; }
   .search-overlay { padding: 76px 14px 24px; }
-  .search-panel { padding: 22px 16px; }
+  .search-panel {
+    max-height: calc(100dvh - 100px);
+    padding: 22px 16px;
+  }
   .search-panel__field { min-height: 52px; padding: 0 14px; }
-  .search-panel__results { max-height: calc(100vh - 190px); }
+  .search-panel__close { top: 10px; right: 10px; width: 44px; height: 44px; }
+  .search-panel__eyebrow { padding-right: 52px; }
+  .search-panel__results { max-height: calc(100dvh - 220px); }
   .search-result { padding: 14px; }
   .footer__text, .footer__sources { line-height: 1.6; letter-spacing: 0.12em; }
 }
