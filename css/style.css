@@ -555,7 +555,7 @@ body.search-open { overflow: hidden; }
   .container { padding: 0 20px; }
   .header { padding: 20px; grid-template-columns: 1fr auto 1fr; }
   .header__right { gap: 16px; }
-  .header__menu-text, .header__lang-btn { display: none; }
+  .header__menu-text { display: none; }
   .fullscreen-menu__close { top: 24px; right: 24px; }
   .fullscreen-menu__footer { display: none; }
   .preloader__text { max-width: 260px; text-align: center; line-height: 1.8; }

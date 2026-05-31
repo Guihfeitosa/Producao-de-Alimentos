@@ -709,6 +709,129 @@ const AUTOPLAY_INTERVAL = 7000;
 
 const dom = {};
 
+const STATIC_TRANSLATIONS = {
+  pt: {
+    pageTitle: 'Produção de Alimentos - Impactos Ambientais',
+    metaDescription: 'Produção de Alimentos e Seus Impactos Ambientais - análise visual sobre pecuária intensiva, monoculturas e agricultura vertical baseada em fontes científicas.',
+    menu: 'MENU',
+    closeMenu: 'Fechar menu',
+    closeSearch: 'Fechar busca',
+    searchButton: 'Buscar',
+    languageButton: 'Idioma',
+    heroImageAlt: 'Imagem temática sobre produção de alimentos',
+    slideNav: 'Navegação entre temas',
+    prevTheme: 'Tema anterior',
+    nextTheme: 'Próximo tema',
+    autoplay: 'Autoplay',
+    searchTitle: 'BUSCA RÁPIDA',
+    searchPlaceholder: 'Buscar tema, dado ou seção',
+    cta: 'EXPLORAR DADOS',
+    navHome: 'INÍCIO',
+    navScience: 'DADOS CIENTÍFICOS',
+    navComparison: 'COMPARATIVO',
+    navOds12: 'ODS 12',
+    navMethodology: 'METODOLOGIA',
+    navAbout: 'SOBRE O PROJETO',
+    menuFooterProject: '© 2026 PRODUÇÃO DE ALIMENTOS',
+    menuFooterSources: 'FONTES: FAO, IPCC, IPBES, OWID E ARTIGOS CIENTÍFICOS',
+    scienceTag: 'ANÁLISE APROFUNDADA',
+    scienceTitle: 'O MECANISMO E IMPACTO',
+    mechanismTitle: 'O MECANISMO',
+    metricsTitle: 'MÉTRICAS COMPARATIVAS (0 a 100%)',
+    glossaryTitle: 'GLOSSÁRIO E FONTES',
+    deepTag: 'ANÁLISE COMPLETA',
+    deepTitle: 'IMPACTOS, LIMITES E SOLUÇÕES',
+    comparisonTag: 'LEITURA COMPARATIVA',
+    comparisonTitle: 'QUAL SISTEMA É MAIS SUSTENTÁVEL?',
+    comparisonIntro: 'Não existe uma resposta única. O impacto depende do alimento produzido, clima, energia disponível, solo, água, escala, transporte, desperdício, dieta e qualidade do manejo. A melhor estratégia costuma combinar produtividade, restauração ecológica e redução de perdas.',
+    comparisonCards: [
+      ['Maior pressão climática', 'Pecuária intensiva', 'Principalmente por metano, uso de terra e mudanças de uso do solo.'],
+      ['Maior pressão hídrica', 'Agricultura irrigada', 'Depende de captação, recarga de aquíferos, tecnologia e governança da água.'],
+      ['Maior risco ao solo', 'Monoculturas mal manejadas', 'Solo exposto, baixa diversidade e uso intensivo de insumos ampliam erosão e degradação.'],
+      ['Maior potencial restaurador', 'Agroflorestas e regenerativa', 'Quando bem manejadas, recuperam carbono, água, biodiversidade e fertilidade.'],
+      ['Menor uso de terra', 'Agricultura vertical', 'Boa para folhas e ervas, mas sensível ao consumo de energia elétrica.'],
+      ['Proteína aquática', 'Pesca e aquicultura', 'Pode ser eficiente, mas exige manejo para evitar sobrepesca, efluentes e perda de habitat.']
+    ],
+    ods12Tag: 'AGENDA 2030',
+    ods12Title: 'ODS 12: CONSUMO E PRODUÇÃO RESPONSÁVEIS',
+    ods12Intro: 'A ODS 12 propõe produzir e consumir com menos desperdício, menos poluição e melhor uso dos recursos naturais. Na alimentação, isso aparece em escolhas como reduzir perdas na cadeia produtiva, planejar compras, valorizar produtores responsáveis, melhorar embalagens, reaproveitar resíduos orgânicos e pressionar por sistemas com menor impacto ambiental.',
+    ods12Image: 'img/ods-12.svg',
+    ods12ImageAlt: 'Ícone da ODS 12: consumo e produção responsáveis',
+    ods12Cards: [
+      ['Reduzir desperdício', 'Diminuir perdas no campo, transporte, mercados e casas evita emissão desnecessária, poupa água e reduz pressão sobre novas áreas produtivas.'],
+      ['Controlar resíduos', 'Uso responsável de fertilizantes, defensivos, embalagens e efluentes reduz contaminação do solo, rios e alimentos.'],
+      ['Reaproveitar recursos', 'Compostagem, reciclagem, reuso de água e economia circular transformam sobras em nutrientes, energia ou novos materiais.'],
+      ['Informar escolhas', 'Educação alimentar, rotulagem clara e dados confiáveis ajudam consumidores a comparar impactos e apoiar cadeias mais sustentáveis.']
+    ],
+    methodologyTitle: 'METODOLOGIA',
+    methodologyText: 'Os números foram selecionados em fontes públicas e científicas, priorizando FAO, IPCC, IPBES, Our World in Data e revisões acadêmicas. As escalas de 0 a 100% são índices comparativos para leitura visual: não substituem inventários locais, mas ajudam a comparar pressão ambiental entre sistemas.',
+    aboutTitle: 'SOBRE O PROJETO',
+    aboutText: '<strong>Produção de Alimentos</strong> apresenta os impactos de diferentes modelos produtivos com linguagem visual imersiva. A proposta é mostrar que sustentabilidade depende de emissões, água, solo, biodiversidade, energia, transporte, desperdício e escolhas de consumo.',
+    footerText: '© 2026 PRODUÇÃO DE ALIMENTOS - PROJETO EDUCACIONAL',
+    footerSources: 'FONTES CONFIÁVEIS E DADOS COMPARATIVOS'
+  },
+  en: {
+    pageTitle: 'Food Production - Environmental Impacts',
+    metaDescription: 'Food Production and Its Environmental Impacts - a visual analysis of intensive livestock, monocultures, vertical farming, and sustainable food systems based on scientific sources.',
+    menu: 'MENU',
+    closeMenu: 'Close menu',
+    closeSearch: 'Close search',
+    searchButton: 'Search',
+    languageButton: 'Language',
+    heroImageAlt: 'Thematic image about food production',
+    slideNav: 'Theme navigation',
+    prevTheme: 'Previous theme',
+    nextTheme: 'Next theme',
+    autoplay: 'Autoplay',
+    searchTitle: 'QUICK SEARCH',
+    searchPlaceholder: 'Search theme, data, or section',
+    cta: 'EXPLORE DATA',
+    navHome: 'HOME',
+    navScience: 'SCIENTIFIC DATA',
+    navComparison: 'COMPARISON',
+    navOds12: 'SDG 12',
+    navMethodology: 'METHODOLOGY',
+    navAbout: 'ABOUT THE PROJECT',
+    menuFooterProject: '© 2026 FOOD PRODUCTION',
+    menuFooterSources: 'SOURCES: FAO, IPCC, IPBES, OWID AND SCIENTIFIC PAPERS',
+    scienceTag: 'DEEP ANALYSIS',
+    scienceTitle: 'MECHANISM AND IMPACT',
+    mechanismTitle: 'THE MECHANISM',
+    metricsTitle: 'COMPARATIVE METRICS (0 to 100%)',
+    glossaryTitle: 'GLOSSARY AND SOURCES',
+    deepTag: 'FULL ANALYSIS',
+    deepTitle: 'IMPACTS, LIMITS AND SOLUTIONS',
+    comparisonTag: 'COMPARATIVE READING',
+    comparisonTitle: 'WHICH SYSTEM IS MORE SUSTAINABLE?',
+    comparisonIntro: 'There is no single answer. Impact depends on the food produced, climate, available energy, soil, water, scale, transport, waste, diet, and management quality. The best strategy often combines productivity, ecological restoration, and loss reduction.',
+    comparisonCards: [
+      ['Highest climate pressure', 'Intensive livestock', 'Mainly due to methane, land use, and land-use change.'],
+      ['Highest water pressure', 'Irrigated agriculture', 'Depends on withdrawals, aquifer recharge, technology, and water governance.'],
+      ['Highest soil risk', 'Poorly managed monocultures', 'Exposed soil, low diversity, and intensive inputs increase erosion and degradation.'],
+      ['Highest restoration potential', 'Agroforestry and regenerative systems', 'When well managed, they restore carbon, water, biodiversity, and fertility.'],
+      ['Lowest land use', 'Vertical farming', 'Useful for leafy greens and herbs, but sensitive to electricity consumption.'],
+      ['Aquatic protein', 'Fisheries and aquaculture', 'Can be efficient, but requires management to avoid overfishing, effluents, and habitat loss.']
+    ],
+    ods12Tag: '2030 AGENDA',
+    ods12Title: 'SDG 12: RESPONSIBLE CONSUMPTION AND PRODUCTION',
+    ods12Intro: 'SDG 12 proposes producing and consuming with less waste, less pollution, and better use of natural resources. In food systems, this means reducing losses across supply chains, planning purchases, valuing responsible producers, improving packaging, reusing organic waste, and pushing for lower-impact systems.',
+    ods12Image: 'img/ods-12-en.svg',
+    ods12ImageAlt: 'SDG 12 icon: responsible consumption and production',
+    ods12Cards: [
+      ['Reduce waste', 'Reducing losses on farms, in transport, markets, and homes avoids unnecessary emissions, saves water, and reduces pressure for new production areas.'],
+      ['Manage residues', 'Responsible use of fertilizers, pesticides, packaging, and effluents reduces contamination of soil, rivers, and food.'],
+      ['Reuse resources', 'Composting, recycling, water reuse, and circular economy practices turn leftovers into nutrients, energy, or new materials.'],
+      ['Inform choices', 'Food education, clear labeling, and reliable data help consumers compare impacts and support more sustainable supply chains.']
+    ],
+    methodologyTitle: 'METHODOLOGY',
+    methodologyText: 'The numbers were selected from public and scientific sources, prioritizing FAO, IPCC, IPBES, Our World in Data, and academic reviews. The 0 to 100% scales are visual comparison indices: they do not replace local inventories, but help compare environmental pressure across systems.',
+    aboutTitle: 'ABOUT THE PROJECT',
+    aboutText: '<strong>Food Production</strong> presents the impacts of different production models through an immersive visual language. The goal is to show that sustainability depends on emissions, water, soil, biodiversity, energy, transport, waste, and consumption choices.',
+    footerText: '© 2026 FOOD PRODUCTION - EDUCATIONAL PROJECT',
+    footerSources: 'RELIABLE SOURCES AND COMPARATIVE DATA'
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   dom.preloader = document.getElementById('preloader');
   
@@ -773,6 +896,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   bindEvents();
   applyTheme(0, false);
+  applyStaticTranslations();
 
   setTimeout(() => {
     if(dom.preloader) dom.preloader.classList.add('preloader--hidden');
@@ -783,6 +907,95 @@ document.addEventListener('DOMContentLoaded', () => {
 // ─────────────────────────────────────────────────────────────
 // 3. EVENTS BINDING
 // ─────────────────────────────────────────────────────────────
+function setText(selector, value) {
+  const element = document.querySelector(selector);
+  if (element) element.textContent = value;
+}
+
+function setHtml(selector, value) {
+  const element = document.querySelector(selector);
+  if (element) element.innerHTML = value;
+}
+
+function setAttr(selector, attr, value) {
+  const element = document.querySelector(selector);
+  if (element) element.setAttribute(attr, value);
+}
+
+function applyStaticTranslations() {
+  const t = STATIC_TRANSLATIONS[currentLang];
+
+  document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : 'en';
+  document.title = t.pageTitle;
+  setAttr('meta[name="description"]', 'content', t.metaDescription);
+
+  setText('.header__menu-text', t.menu);
+  setText('#search-title', t.searchTitle);
+  setAttr('#site-search', 'placeholder', t.searchPlaceholder);
+  setText('#cta-text', t.cta);
+
+  setText('#link-home', t.navHome);
+  setText('#link-science', t.navScience);
+  setText('#link-comparison', t.navComparison);
+  setText('#link-ods12', t.navOds12);
+  setText('#link-methodology', t.navMethodology);
+  setText('#link-about', t.navAbout);
+
+  setText('.fullscreen-menu__footer span:nth-child(1)', t.menuFooterProject);
+  setText('.fullscreen-menu__footer span:nth-child(2)', t.menuFooterSources);
+
+  setAttr('#menu-close-btn', 'aria-label', t.closeMenu);
+  setAttr('#search-close-btn', 'aria-label', t.closeSearch);
+  setAttr('#search-btn', 'aria-label', t.searchButton);
+  setAttr('#lang-btn', 'aria-label', t.languageButton);
+  setAttr('#hero-image', 'alt', t.heroImageAlt);
+  setAttr('#slide-controls', 'aria-label', t.slideNav);
+  setAttr('#prev-btn', 'aria-label', t.prevTheme);
+  setAttr('#next-btn', 'aria-label', t.nextTheme);
+  setAttr('#play-btn', 'aria-label', t.autoplay);
+  if (dom.slideBars) {
+    dom.slideBars.forEach((bar, index) => {
+      if (THEMES[index]) bar.setAttribute('aria-label', THEMES[index].name[currentLang]);
+    });
+  }
+
+  setText('#science-tag', t.scienceTag);
+  setText('#science-title', t.scienceTitle);
+  setText('#title-block-1', t.mechanismTitle);
+  setText('#title-block-2', t.metricsTitle);
+  setText('#title-block-3', t.glossaryTitle);
+  setText('#deep-tag', t.deepTag);
+  setText('#deep-title', t.deepTitle);
+
+  setText('#comparison-tag', t.comparisonTag);
+  setText('#comparison-title', t.comparisonTitle);
+  setText('#comparison-intro', t.comparisonIntro);
+  t.comparisonCards.forEach((card, index) => {
+    const position = index + 1;
+    setText(`.comparison-card:nth-child(${position}) .comparison-card__label`, card[0]);
+    setText(`.comparison-card:nth-child(${position}) strong`, card[1]);
+    setText(`.comparison-card:nth-child(${position}) p`, card[2]);
+  });
+
+  setText('#ods12-tag', t.ods12Tag);
+  setText('#ods12-title', t.ods12Title);
+  setText('#ods12-intro', t.ods12Intro);
+  setAttr('.ods12__image', 'src', t.ods12Image);
+  setAttr('.ods12__image', 'alt', t.ods12ImageAlt);
+  t.ods12Cards.forEach((card, index) => {
+    const position = index + 1;
+    setText(`.ods12-card:nth-child(${position}) strong`, card[0]);
+    setText(`.ods12-card:nth-child(${position}) p`, card[1]);
+  });
+
+  setText('#title-methodology', t.methodologyTitle);
+  setHtml('#text-methodology', t.methodologyText);
+  setText('#title-about', t.aboutTitle);
+  setHtml('#text-about', t.aboutText);
+  setText('.footer__text', t.footerText);
+  setText('.footer__sources', t.footerSources);
+}
+
 function bindEvents() {
   if (dom.nextBtn) dom.nextBtn.addEventListener('click', () => handleManualNavigation(1));
   if (dom.prevBtn) dom.prevBtn.addEventListener('click', () => handleManualNavigation(-1));
@@ -828,6 +1041,10 @@ function bindEvents() {
     dom.langBtn.addEventListener('click', () => {
       currentLang = currentLang === 'pt' ? 'en' : 'pt';
       dom.langText.textContent = currentLang.toUpperCase();
+      applyStaticTranslations();
+      applyTheme(currentIndex, false);
+      renderSearchResults(dom.searchInput ? dom.searchInput.value : '');
+      return;
       
       // Update static texts
       if (dom.ctaText) dom.ctaText.textContent = currentLang === 'pt' ? 'EXPLORAR DADOS' : 'EXPLORE DATA';
